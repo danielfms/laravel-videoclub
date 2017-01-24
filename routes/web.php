@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', 'HomeController@getHome');
 
 Route::get('auth/login', function () {
     return view('auth.login');
@@ -23,18 +21,10 @@ Route::get('auth/logout', function () {
     return "Logout";
 })->name('auth.logout');
 
-Route::get('catalog', function () {
-    return view('catalog.index');
-})->name('catalog.index');
+Route::get('catalog', 'CatalogController@getIndex')->name('catalog.index');
 
-Route::get('catalog/show/{id}', function ($id) {
-    return view('catalog.show',['id' => $id]);
-})->name('catalog.show');
+Route::get('catalog/show/{id}', 'CatalogController@getShow')->name('catalog.show');
 
-Route::get('catalog/create', function () {
-    return view('catalog.create');
-})->name('catalog.create');
+Route::get('catalog/create', 'CatalogController@getCreate')->name('catalog.create');
 
-Route::get('catalog/edit/{id}', function ($id) {
-    return view('catalog.edit',['id' => $id]);
-})->name('catalog.edit');
+Route::get('catalog/edit/{id}', 'CatalogController@getEdit')->name('catalog.edit');
