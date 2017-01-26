@@ -5,27 +5,27 @@
 
   <div class="row">
     <div class="col-sm-4">
-     <img src="{{$pelicula['poster']}}" style="height:350px"/>
+     <img src="{{$pelicula->poster}}" style="height:350px"/>
     </div>
     <div class="col-sm-8">
-    <h1>{{$pelicula['title']}}</h1>
-    <h3>Año: {{$pelicula['year']}}</h2>
-    <h3>Director: {{$pelicula['director']}}</h2>
+    <h1>{{$pelicula->title}}</h1>
+    <h3>Año: {{$pelicula->year}}</h2>
+    <h3>Director: {{$pelicula->director}}</h2>
 
     <p>
       <h4>
-        <span style="font-weight: bold;">Resumen:</span> {{$pelicula['synopsis']}}
+        <span style="font-weight: bold;">Resumen:</span> {{$pelicula->synopsis}}
       </h4>
     </p>
 
     <p>
       <h4>
-        <span style="font-weight: bold;">Estado:</span> {{$pelicula['rented'] ? 'Película actualmente alquilada' : 'Película disponible'}}
+        <span style="font-weight: bold;">Estado:</span> {{$pelicula->rented ? 'Película actualmente alquilada' : 'Película disponible'}}
       </h4>
     </p>
 
     <p>
-      @if( $pelicula['rented'])
+      @if( $pelicula->rented)
        <button type="button" class="btn btn-danger">Devolver película</button>
       @else
         <button type="button" class="btn btn-info">Alquilar película</button>
